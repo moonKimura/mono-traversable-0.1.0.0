@@ -27,7 +27,7 @@ script:
  - cabal sdist
  - run-cabal-test --show-details=always
  - export SRC_TGZ=$(cabal info . | awk '{print $2 ".tar.gz";exit}') ;
-   (cd dlist/;
+   (cd dist/;
    if [ -f "$SRC_TGZ" ]; then
       cabal install "$SRC_TGZ";
    else
