@@ -37,4 +37,4 @@ script:
 
 after_script:
  - ln -s dist/hpc/mix/mono-traversable-0.1.0.0 ./dist/hpc/mix/text
- - hpc-coveralls test --exclude-dir
+ - hpc-coveralls --exclude-dir=test test
