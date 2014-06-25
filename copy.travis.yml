@@ -27,13 +27,13 @@ script:
  - cabal sdist
  - run-cabal-test --show-details=always
  - export SRC_TGZ=$(cabal info . | awk '{print $2 ".tar.gz";exit}') ;
-   cd dlist/;
+   (cd dlist/;
    if [ -f "$SRC_TGZ" ]; then
       cabal install "$SRC_TGZ";
    else
       echo "expected '$SRC_TGZ' not found";
       exit 1;
-   fi
+   fi)
 
 after_script:
  - ln -s dist/hpc/mix/mono-traversable-0.1.0.0 ./dist/hpc/mix/text
